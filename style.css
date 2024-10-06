@@ -58,10 +58,10 @@ nav ul li a:hover {
     position: absolute;
     top: 30%;
     left: 30%;
-    transform: translate(-50%, -50%);
+    transform: translate(-30%, -30%);
     text-align: center;
     color: white;
-    animation: fadeInUp 2s ease-out forwards;
+    animation: fadeInUp 1s ease-out forwards;
     opacity: 0;
     max-width: 100%;
     display: flex;
@@ -129,7 +129,12 @@ nav ul li a:hover {
     }
 
     .hero .content {
-        padding: 0 20px; /* Añadimos padding para que no toque los bordes */
+        padding: 0 15px; /* Añadimos padding para que no toque los bordes */
+        max-width: 100%;
+    }
+    .hero {
+        background-position: center;
+        background-size: cover;
     }
 }
 
