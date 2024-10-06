@@ -61,16 +61,15 @@ nav ul li a:hover {
     color: white;
     animation: fadeInUp 2s ease-out forwards;
     opacity: 0;
-    max-width: 100%; /* Aseguramos que no desborde horizontalmente */
-    display: flex; /* Flexbox para alineación */
-    flex-direction: column; /* Alinea los elementos en una columna */
-    align-items: center; /* Centra horizontalmente los elementos */
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    align-items: center;
 }
 
 .subtitle {
@@ -92,6 +91,40 @@ nav ul li a:hover {
     background-color: #a2d531;
 }
 
+/* Media Queries para pantallas más pequeñas (teléfonos) */
+@media only screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px; /* Reduce el tamaño del texto en pantallas pequeñas */
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        padding: 8px 20px; /* Ajusta el tamaño del botón */
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px; /* Más pequeño para pantallas realmente pequeñas */
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+}
 /* Animations */
 @keyframes fadeInUp {
     from {
