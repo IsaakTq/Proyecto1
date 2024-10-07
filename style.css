@@ -19,24 +19,6 @@ header {
     padding: 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #c5f53a;
-}
-
 .hero {
     height: 100vh;
     background-image: url('https://imagenes.heraldo.es/files/image_990_556/uploads/imagenes/2024/09/27/hojas-de-salvia-gsc1.jpeg');
