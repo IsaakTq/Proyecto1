@@ -55,18 +55,18 @@ nav ul li a:hover {
 }
 
 .hero .content {
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    animation: fadeInUp 1s ease-out forwards;
-    opacity: 0;
-    max-width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado absoluto en ambos ejes */
+    color: white;
+    max-width: 100%;
+    padding: 0 15px; /* Añadido padding para evitar que el contenido toque los bordes en pantallas pequeñas */
 }
 
 .hero h1 {
