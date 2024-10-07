@@ -56,9 +56,9 @@ nav ul li a:hover {
 
 .hero .content {
     position: absolute;
-    top: 30%;
-    left: 30%;
-    transform: translate(-30%, -30%);
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     animation: fadeInUp 1s ease-out forwards;
@@ -129,7 +129,7 @@ nav ul li a:hover {
     }
 
     .hero .content {
-        padding: 0 15px; /* Añadimos padding para que no toque los bordes */
+        padding: 0 12px; /* Añadimos padding para que no toque los bordes */
         max-width: 100%;
     }
     .hero {
