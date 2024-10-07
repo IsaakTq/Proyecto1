@@ -81,7 +81,7 @@ nav ul li a:hover {
 
 .btn {
     padding: 10px 30px;
-    background-color: #c5f53a;
+    background-color: #94f53a;
     color: #333;
     text-decoration: none;
     font-size: 18px;
@@ -131,10 +131,7 @@ nav ul li a:hover {
     .hero .content {
         padding: 0 12px; /* Añadimos padding para que no toque los bordes */
         max-width: 100%;
-        position: absolute;
-        top: 10%;
-        left: 40%;
-        transform: translate(-40%, -40%);
+        align-items: center;
     }
     .hero {
         background-position: center;
