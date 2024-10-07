@@ -40,10 +40,13 @@ body, html {
 .content {
     color: white;
     padding: 20px;
-    max-width: 100%; /* Asegura que no se desborde el contenido en pantallas pequeñas */
-    z-index: 2; /* Asegura que el contenido esté por encima del fondo opaco */
-    animation: fadeIn 1s ease-out; /* Animación de entrada */
+    max-width: 100%;
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+    will-change: opacity, transform;
+    transform: translateZ(0); /* Fuerza el uso de la aceleración de hardware */
 }
+
 
 h1 {
     font-size: 48px;
@@ -75,13 +78,16 @@ h1 {
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* Mueve el texto hacia abajo al empezar */
+        transform: translateY(20px);
+        -webkit-transform: translateY(20px); /* Prefijo para Chrome */
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* El texto vuelve a su posición original */
+        transform: translateY(0);
+        -webkit-transform: translateY(0); /* Prefijo para Chrome */
     }
 }
+
 
 /* Responsividad para móviles */
 @media (max-width: 768px) {
@@ -111,17 +117,5 @@ h1 {
     .btn {
         font-size: 14px;
         padding: 6px 12px;
-    }
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
