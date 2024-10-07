@@ -132,7 +132,7 @@ nav ul li a:hover {
         padding: 0 12px; /* Añadimos padding para que no toque los bordes */
         max-width: 100%;
         position: absolute;
-        top: 40%;
+        top: 10%;
         left: 40%;
         transform: translate(-40%, -40%);
     }
