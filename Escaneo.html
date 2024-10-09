@@ -9,7 +9,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Estilo base para que el diseño sea responsivo */
         body {
             display: flex;
             flex-direction: row;
@@ -21,7 +20,6 @@
             background-color: #f0f0f0;
         }
 
-        /* Estilos para las dos columnas */
         .left-panel {
             background-image: url("https://img.freepik.com/fotos-premium/hojas-plantas-verdes-jardin-primavera-fondo-verde_73485-5496.jpg");
             flex: 0.3;
@@ -87,12 +85,14 @@
         #label-container {
             margin-top: 20px;
             font-size: 18px;
-            color: #333;
+            color: #333; /* Cambiamos el color de la fuente a un gris oscuro */
             text-align: center;
             word-wrap: break-word;
             max-width: 100%;
             opacity: 0;
             transition: opacity 0.5s, transform 0.5s;
+            /* Opcional: Si quieres un fondo visible detrás del texto */
+            /* background-color: rgba(255, 255, 255, 0.7); */ 
         }
 
         #label-container.active {
@@ -100,7 +100,6 @@
             transform: scale(1.05);
         }
 
-        /* Animaciones */
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
@@ -139,7 +138,6 @@
             }
         }
 
-        /* Estilos para pantallas pequeñas */
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -160,6 +158,7 @@
 
             #label-container {
                 font-size: 16px;
+                background-color: #333;
             }
         }
     </style>
@@ -181,26 +180,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
-        // URL de tu modelo entrenado en Teachable Machine
         const URL = "https://teachablemachine.withgoogle.com/models/rUnkYhpd5/";
     
         let model, maxPredictions;
         const videoElement = document.getElementById("video");
-    
-        // Función para inicializar el modelo y la cámara
+
         async function init() {
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
     
-            // Cargar el modelo y los metadatos
             model = await tmImage.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
     
-            // Detectar si es móvil o computadora para usar la cámara correspondiente
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            const facingMode = isMobile ? { exact: "environment" } : "user"; // Trasera en móvil, frontal en web
+            const facingMode = isMobile ? { exact: "environment" } : "user";
     
-            // Configuración de la cámara
             const constraints = {
                 video: {
                     facingMode: facingMode,
@@ -220,23 +214,20 @@
                 alert("No se pudo acceder a la cámara.");
             }
         }
-    
-        // Bucle para actualizar la cámara y hacer predicciones
+
         async function loop() {
             await predict();
             window.requestAnimationFrame(loop);
         }
-    
-        // Realizar predicciones con el modelo de Teachable Machine
+
         async function predict() {
             const prediction = await model.predict(videoElement);
-    
-            // Mostrar predicciones con más del 70% de certeza
+
             const labelContainer = document.getElementById("label-container");
-            labelContainer.innerHTML = ""; // Limpiar contenedor antes de actualizarlo
+            labelContainer.innerHTML = ""; 
             for (let i = 0; i < maxPredictions; i++) {
                 const probability = prediction[i].probability.toFixed(2) * 100;
-                if (probability >= 70) { // Mostrar solo predicciones con al menos 70% de certeza
+                if (probability >= 70) {
                     const classPrediction =
                         prediction[i].className + ": " + probability.toFixed(2) + "%";
                     const predictionElement = document.createElement("div");
@@ -244,9 +235,9 @@
                     labelContainer.appendChild(predictionElement);
                 }
             }
+            labelContainer.classList.add('active'); // Aseguramos que el contenedor sea visible
         }
     </script>
-    
 
 </body>
 </html>
