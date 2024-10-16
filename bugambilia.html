@@ -21,19 +21,14 @@
         }
 
         .left-panel {
-            background-image: url("https://lepotit.cl/cdn/shop/products/bugambilia2_860x.jpg?v=1639591617");
+            background-image: url("https://planta.do/cdn/shop/articles/bugambilia-como-cuidar-tu-planta-170381_1080x.jpg?v=1697258698");
             background-size: cover;
-            background-position: center;
-            height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+            flex: 0.3;
             display: flex;
-            justify-content: center;
             align-items: center;
-            text-align: center; /* Alinea el texto en el centro horizontalmente */
-            width: 30%; /* Ocupa el 100% del ancho */
-            padding: 0; /* Elimina cualquier padding extra */
-            margin: 0; /* Elimina cualquier margen extra */
-            overflow: hidden; /* Evita que el contenido desborde horizontalmente */
-            position: relative;
+            justify-content: center;
+            padding: 20px;
+            color: white;
         }
 
         .right-panel {
@@ -44,18 +39,31 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            animation: fadeInRight 2s ease forwards;
         }
 
         h1 {
             font-size: 2rem;
             text-align: center;
             color: rgb(0, 0, 0);
+            animation: fadeInScale 2s ease forwards;
         }
 
         h5 {
             text-align: left;
             color: white;
             animation: fadeInLeft 2s ease-in-out;
+        }
+
+        h2, p, ul {
+            opacity: 0;
+            animation: fadeIn 3s ease forwards;
+            animation-delay: 1s;
+        }
+
+        ul li {
+            animation: fadeInItem 3s ease forwards;
+            animation-delay: 2s;
         }
 
         button {
@@ -66,21 +74,12 @@
             width: 100%;
             max-width: 300px;
             transition: transform 0.2s ease;
+            animation: fadeIn 3s ease forwards;
+            animation-delay: 2s;
         }
 
         button:hover {
             animation: bounce 0.5s;
-        }
-
-        #label-container {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333; 
-            text-align: center;
-            word-wrap: break-word;
-            max-width: 100%;
-            opacity: 0;
-            transition: opacity 0.5s, transform 0.5s;
         }
 
         @keyframes fadeInLeft {
@@ -94,6 +93,39 @@
             }
         }
 
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInItem {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
@@ -104,10 +136,6 @@
             60% {
                 transform: translateY(-5px);
             }
-        }
-
-        h1 {
-            animation: fadeInScale 2s ease forwards;
         }
 
         @keyframes fadeInScale {
@@ -135,7 +163,7 @@
                 max-width: 100%;
             }
 
-            #label-container {
+            ul, p {
                 font-size: 16px;
             }
         }
@@ -149,7 +177,23 @@
 
     <div class="right-panel">
         <h1>Buganvilia</h1>
-        <div id="label-container" class="mt-3"></div>
+        <div id="label-container" class="mt-3">
+            <h2>Beneficios Medicinales de la Buganvilia</h2>
+            <p>La buganvilia no solo es conocida por su belleza, sino que también se utiliza en la medicina tradicional en diversas culturas debido a sus propiedades medicinales:</p>
+            <ul>
+                <li><strong>Tratamiento de problemas respiratorios:</strong> Las flores de buganvilia se han utilizado para preparar tés o infusiones que ayudan a aliviar la tos, la bronquitis, el asma y otras afecciones respiratorias.</li>
+                <li><strong>Propiedades expectorantes:</strong> Al ser un expectorante natural, las infusiones de buganvilia ayudan a despejar las vías respiratorias, facilitando la expulsión de flemas y mucosidades.</li>
+                <li><strong>Propiedades antiinflamatorias:</strong> Los extractos de buganvilia pueden ayudar a reducir la inflamación, aliviando dolores musculares y articulares, así como la hinchazón en otras partes del cuerpo.</li>
+                <li><strong>Alivio del dolor de garganta:</strong> Gargarear con una infusión de buganvilia puede ser útil para calmar la irritación y el dolor de garganta.</li>
+                <li><strong>Mejora la digestión:</strong> Las infusiones de buganvilia también se utilizan para tratar problemas digestivos leves, como la indigestión, el malestar estomacal y los gases.</li>
+                <li><strong>Control de la fiebre:</strong> En algunas tradiciones, se emplea para reducir la fiebre debido a su capacidad para inducir la sudoración y ayudar al cuerpo a eliminar toxinas.</li>
+                <li><strong>Propiedades antimicrobianas:</strong> Se ha estudiado que los extractos de buganvilia pueden tener efectos antimicrobianos, ayudando a combatir infecciones leves.</li>
+                <li><strong>Regulación de la menstruación:</strong> En algunas culturas, se utiliza para regular los ciclos menstruales irregulares y aliviar los cólicos menstruales.</li>
+                <li><strong>Tratamiento de la diabetes:</strong> Algunas investigaciones sugieren que la buganvilia puede tener un efecto positivo en la regulación de los niveles de azúcar en la sangre, lo que la convierte en un remedio natural potencial para la diabetes tipo 2.</li>
+                <li><strong>Protección de la piel:</strong> Aplicada de forma tópica en algunos preparados, la buganvilia puede ayudar a calmar irritaciones cutáneas leves y a promover la cicatrización de heridas.</li>
+            </ul>
+            <p>Con estos amplios beneficios, la buganvilia es una planta medicinal valiosa que puede ser utilizada en diversas formas, desde infusiones hasta aplicaciones tópicas, para promover el bienestar.</p>
+        </div>
     </div>
 
 </body>
