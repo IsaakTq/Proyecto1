@@ -224,6 +224,9 @@
 
             const labelContainer = document.getElementById("label-container");
             labelContainer.innerHTML = ""; 
+
+            let highPrediction = null;
+
             for (let i = 0; i < maxPredictions; i++) {
                 const probability = prediction[i].probability.toFixed(2) * 100;
                 if (probability >= 70) {
@@ -233,8 +236,20 @@
                     predictionElement.innerText = classPrediction;
                     labelContainer.appendChild(predictionElement);
                 }
+
+                // Si la probabilidad es mayor o igual a 90%, guardamos el nombre de la clase
+                if (probability >= 90) {
+                    highPrediction = prediction[i].className;
+                }
             }
+
             labelContainer.classList.add('active'); // Aseguramos que el contenedor sea visible
+
+            // Si tenemos una predicción alta, redirigimos a la página correspondiente
+            if (highPrediction) {
+                const url = highPrediction.toLowerCase() + ".html"; // Convertimos el nombre a minúsculas y agregamos .html
+                window.location.href = url; // Redirigimos a la página
+            }
         }
     </script>
 
