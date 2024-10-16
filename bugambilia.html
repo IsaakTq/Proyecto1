@@ -196,6 +196,8 @@
 
             <!-- Botón para lectura en voz alta -->
             <button onclick="leerTexto()">Escuchar lectura en voz alta</button>
+            <!-- Botón para detener la lectura -->
+            <button onclick="detenerLectura()">Detener lectura</button>
         </div>
     </div>
 
@@ -206,6 +208,10 @@
             const speech = new SpeechSynthesisUtterance(texto);
             speech.lang = "es-ES";  // Establece el idioma en español
             window.speechSynthesis.speak(speech);
+        }
+
+        function detenerLectura() {
+            window.speechSynthesis.cancel();  // Detiene la lectura en curso
         }
     </script>
 

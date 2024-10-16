@@ -248,7 +248,9 @@
             // Si tenemos una predicción alta, redirigimos a la página correspondiente
             if (highPrediction) {
                 const url = highPrediction.toLowerCase() + ".html"; // Convertimos el nombre a minúsculas y agregamos .html
-                window.location.href = url; // Redirigimos a la página
+                setTimeout(() => {
+                    window.location.href = url; // Redirigimos a la página después de 5 segundos
+                }, 7000); // 5000 milisegundos = 5 segundos
             }
         }
     </script>
